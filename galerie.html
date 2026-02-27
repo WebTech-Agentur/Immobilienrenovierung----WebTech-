@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vorher-Nachher Galerie | Isar Renovierung</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+            padding: 150px 0 80px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .gallery-item {
+            margin-bottom: 80px;
+            background: var(--light-gray);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .gallery-images {
+            display: flex;
+            width: 100%;
+        }
+
+        .gallery-images>div {
+            flex: 1;
+            position: relative;
+        }
+
+        .gallery-images img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .image-label {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 5px 15px;
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery-info {
+            padding: 40px;
+        }
+
+        .gallery-info h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+        }
+
+        .gallery-info p {
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .project-meta {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .meta-item i {
+            color: var(--primary-color);
+        }
+
+        .quote {
+            background: var(--white);
+            padding: 20px;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 4px;
+            font-style: italic;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .gallery-images {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">ISAR<span>RENOVIERUNG</span></a>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ueber-uns.html">Über Uns</a></li>
+                <li><a href="leistungen.html">Leistungen</a></li>
+                <li><a href="galerie.html" class="active">Galerie</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="dashboard-login.html" style="color: var(--primary-color);"><i
+                            class="fa-solid fa-user-circle"></i> Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-hero gallery-hero">
+        <div class="container">
+            <h1>Before & After Transformations</h1>
+            <p>See how we turn outdated spaces into premium living environments.</p>
+            <a href="#projects" class="btn btn-gold" style="margin-top: 30px;">View Transformations</a>
+        </div>
+    </header>
+
+    <section class="section" id="projects">
+        <div class="container">
+
+            <!-- Project 1: Kitchen -->
+            <div class="gallery-item" style="background: transparent; box-shadow: none;">
+                <div class="gallery-showcase">
+                    <div class="gallery-img-container gallery-image-before">
+                        <span class="badge-before">BEFORE</span>
+                        <!-- Very old kitchen -->
+                        <img src="images/before_kitchen_old_1772182820915.png" alt="Alte, veraltete Küche"
+                            class="gallery-interactive-img">
+                    </div>
+                    <div class="gallery-img-container gallery-image-after">
+                        <span class="badge-after">AFTER</span>
+                        <!-- Modern clean kitchen -->
+                        <img src="images/after_kitchen_modern_1772182845192.png" alt="Moderne Luxusküche"
+                            class="gallery-interactive-img">
+                    </div>
+                </div>
+                <div class="gallery-info-center">
+                    <h3>Premium Kitchen Transformation</h3>
+                    <p>Komplette Entkernung einer veralteten Küche mit braunen Schränken und defekten Fliesen. Einbau
+                        einer minimalistischen Designerküche mit hochwertigen Geräten, dunkler Steinarbeitsplatte und
+                        moderner LED-Lichtgestaltung. Das Ergebnis: Eine helle, moderne und luxuriöse Atmosphäre.</p>
+                </div>
+            </div>
+
+            <!-- Project 2: Bathroom -->
+            <div class="gallery-item" style="background: transparent; box-shadow: none;">
+                <div class="gallery-showcase">
+                    <div class="gallery-img-container gallery-image-before">
+                        <span class="badge-before">BEFORE</span>
+                        <!-- Very old bathroom -->
+                        <img src="images/before_bathroom_old_1772182864983.png" alt="Altes, unmodernes Badezimmer"
+                            class="gallery-interactive-img">
+                    </div>
+                    <div class="gallery-img-container gallery-image-after">
+                        <span class="badge-after">AFTER</span>
+                        <!-- Modern spa bathroom -->
+                        <img src="images/after_bathroom_modern_1772182927750.png" alt="Modernes High-End Badezimmer"
+                            class="gallery-interactive-img">
+                    </div>
+                </div>
+                <div class="gallery-info-center">
+                    <h3>Luxury Bathroom Renovation</h3>
+                    <p>Vollständige Modernisierung eines in die Jahre gekommenen Badezimmers mit dunklen Fliesen und
+                        schwacher Beleuchtung. Installation von großformatigen Fliesen, einer bodengleichen Walk-In
+                        Dusche und einem schwebenden Waschtisch, abgerundet mit stimmungsvoller LED-Spiegelbeleuchtung.
+                        Eine wahre Spa-Oase.</p>
+                </div>
+            </div>
+
+            <!-- Project 3: Complete Property -->
+            <div class="gallery-item" style="background: transparent; box-shadow: none;">
+                <div class="gallery-showcase">
+                    <div class="gallery-img-container gallery-image-before">
+                        <span class="badge-before">BEFORE</span>
+                        <!-- Old Living Room -->
+                        <img src="images/before_living_old_1772182946961.png" alt="Altes, veraltetes Wohnzimmer"
+                            class="gallery-interactive-img">
+                    </div>
+                    <div class="gallery-img-container gallery-image-after">
+                        <span class="badge-after">AFTER</span>
+                        <!-- Luxury Living Room -->
+                        <img src="images/after_living_modern_1772182966136.png" alt="Modernes, luxuriöses Wohnzimmer"
+                            class="gallery-interactive-img">
+                    </div>
+                </div>
+                <div class="gallery-info-center" style="margin-bottom: 0;">
+                    <h3>Complete Property Upgrade</h3>
+                    <p>Umfassende Neugestaltung des gesamten Wohnbereichs. Das dunkle, beengte Raumgefühl wurde durch
+                        einen offenen Grundriss, nahtlose Spachtelböden, helle Panorama-Fenster und modernste Smart-Home
+                        Technik ausgetauscht. Ein beeindruckendes Vorher-Nachher Wohlfühlkonzept.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>ISAR RENOVIERUNG</h3>
+                    <p>Wir transformieren Räume in Lebensqualität. Ihr professioneller Partner für Renovierung und
+                        Umzug.</p>
+                    <div class="social-icons" style="margin-top: 15px;">
+                        <a href="#" style="color: var(--primary-color); font-size: 1.2rem; margin-right: 15px;"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a href="#" style="color: var(--primary-color); font-size: 1.2rem; margin-right: 15px;"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" style="color: var(--primary-color); font-size: 1.2rem;"><i
+                                class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Kontakt</h3>
+                    <p><i class="fa-solid fa-location-dot"></i> Scharnhorststraße 28, <br>80992 München, Bayern</p>
+                    <p><i class="fa-solid fa-phone"></i> +49 155 6628 4478</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@isar-renovierung.de</p>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="ueber-uns.html">Über Uns</a></li>
+                        <li><a href="leistungen.html">Leistungen</a></li>
+                        <li><a href="galerie.html">Galerie</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Rechtliches</h3>
+                    <ul class="footer-links">
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                        <li><a href="agb.html">AGB</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Isar Renovierung – All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="galleryLightbox" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="galleryLightboxImg" alt="Gallery Zoom">
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightbox = document.getElementById('galleryLightbox');
+            const lightboxImg = document.getElementById('galleryLightboxImg');
+            const closeBtn = document.querySelector('.lightbox-close');
+            const galleryImages = document.querySelectorAll('.gallery-interactive-img');
+
+            galleryImages.forEach(img => {
+                img.addEventListener('click', () => {
+                    lightbox.style.display = 'flex';
+                    // Trigger reflow to ensure CSS transition fires
+                    void lightbox.offsetWidth;
+                    lightbox.classList.add('active');
+                    lightboxImg.src = img.src;
+                });
+            });
+
+            const closeLightbox = () => {
+                lightbox.classList.remove('active');
+                setTimeout(() => {
+                    if (!lightbox.classList.contains('active')) {
+                        lightbox.style.display = 'none';
+                    }
+                }, 400); // 0.4s
+            };
+
+            closeBtn.addEventListener('click', closeLightbox);
+
+            // Close on background click
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

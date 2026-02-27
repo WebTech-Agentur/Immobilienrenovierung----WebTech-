@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kunden-Dashboard | Isar Renovierung</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, var(--dark-gray) 0%, var(--black) 100%);
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-container {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .login-box {
+            background: var(--white);
+            padding: 50px;
+            border-radius: 12px;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 450px;
+            text-align: center;
+        }
+
+        .login-logo {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 5px;
+            display: inline-block;
+        }
+
+        .login-logo span {
+            color: var(--black);
+        }
+
+        .login-box p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--black);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        .login-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            font-size: 0.9rem;
+        }
+
+        .login-options a {
+            color: var(--primary-color);
+        }
+
+        .login-options a:hover {
+            text-decoration: underline;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 30px;
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .back-link:hover {
+            color: var(--black);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="login-container">
+        <div class="login-box">
+            <a href="index.html" class="login-logo">ISAR<span>RENOVIERUNG</span></a>
+            <p>Digitales Kunden-Dashboard</p>
+
+            <form
+                onsubmit="event.preventDefault(); alert('Dies ist eine Demo-Umgebung. Die Backend-Integration wird hier benötigt.'); window.location.href='index.html';">
+
+                <div class="form-group">
+                    <label for="email">E-Mail oder Projekt-ID</label>
+                    <input type="text" id="email" class="form-control" placeholder="Ihre Zugangsdaten" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Passwort</label>
+                    <input type="password" id="password" class="form-control" placeholder="Ihr Passwort" required>
+                </div>
+
+                <div class="login-options">
+                    <label style="display: flex; align-items: center; gap: 5px; cursor: pointer; color: #666;">
+                        <input type="checkbox"> Angemeldet bleiben
+                    </label>
+                    <a href="#">Passwort vergessen?</a>
+                </div>
+
+                <button type="submit" class="btn btn-primary"
+                    style="width: 100%; padding: 15px; font-size: 1.1rem;">Einloggen</button>
+            </form>
+
+            <a href="index.html" class="back-link"><i class="fa-solid fa-arrow-left"></i> Zurück zur Webseite</a>
+        </div>
+    </div>
+
+</body>
+
+</html>

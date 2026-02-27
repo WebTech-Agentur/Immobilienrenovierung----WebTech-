@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt | Isar Renovierung</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+            padding: 150px 0 80px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 50px;
+        }
+
+        .contact-info {
+            background: var(--dark-gray);
+            color: var(--white);
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .contact-info h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .info-item i {
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            margin-top: 5px;
+        }
+
+        .info-item p {
+            color: #ddd;
+        }
+
+        .info-item strong {
+            display: block;
+            color: var(--white);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+
+        .contact-form {
+            background: var(--light-gray);
+            padding: 40px;
+            border-radius: 8px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary-color);
+        }
+
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .file-upload {
+            margin-top: 10px;
+        }
+
+        .checkbox-group {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            font-size: 0.9rem;
+            margin-top: 20px;
+        }
+
+        .checkbox-group input {
+            margin-top: 4px;
+        }
+
+        /* Map Layout */
+        .map-container {
+            margin-top: 40px;
+            height: 400px;
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        @media (max-width: 900px) {
+            .contact-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">ISAR<span>RENOVIERUNG</span></a>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ueber-uns.html">Über Uns</a></li>
+                <li><a href="leistungen.html">Leistungen</a></li>
+                <li><a href="galerie.html">Galerie</a></li>
+                <li><a href="kontakt.html" class="active">Kontakt</a></li>
+                <li><a href="dashboard-login.html" style="color: var(--primary-color);"><i
+                            class="fa-solid fa-user-circle"></i> Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-hero"
+        style="background-image: url('https://images.unsplash.com/photo-1423666639041-f56000c27a9a?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');">
+        <div class="container">
+            <h1>Starten Sie jetzt Ihr Renovierungsprojekt</h1>
+            <p>Holen Sie sich ein kostenloses und unverbindliches Angebot.</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+            <div class="contact-layout">
+
+                <!-- Contact Info Side -->
+                <div class="contact-info">
+                    <h3>Kontaktdaten</h3>
+
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <strong>Adresse</strong>
+                            <p>Scharnhorststraße 28<br>80992 München<br>Deutschland</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <strong>Telefon</strong>
+                            <p><a href="tel:+4915566284478">+49 155 6628 4478</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <strong>E-Mail</strong>
+                            <p><a href="mailto:info@isar-renovierung.de">info@isar-renovierung.de</a></p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fa-solid fa-clock"></i>
+                        <div>
+                            <strong>Öffnungszeiten</strong>
+                            <p>Mo - Fr: 08:00 - 18:00 Uhr<br>Sa: 09:00 - 14:00 Uhr<br>So: Geschlossen</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form Side -->
+                <div class="contact-form">
+                    <h3 style="margin-bottom: 20px; font-size: 1.5rem;">Schreiben Sie uns</h3>
+                    <form
+                        onsubmit="event.preventDefault(); alert('Vielen Dank für Ihre Anfrage! Wir melden uns in Kürze.');">
+
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input type="text" id="name" class="form-control" required
+                                placeholder="Ihr vollständiger Name">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Telefonnummer *</label>
+                            <input type="tel" id="phone" class="form-control" required placeholder="Ihre Telefonnummer">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">E-Mail *</label>
+                            <input type="email" id="email" class="form-control" required
+                                placeholder="Ihre E-Mail-Adresse">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="project-type">Projektart</label>
+                            <select id="project-type" class="form-control">
+                                <option value="">Bitte wählen...</option>
+                                <option value="Renovierung">Komplette Immobilienrenovierung</option>
+                                <option value="Badezimmer">Badezimmerrenovierung</option>
+                                <option value="Sanitaer">Sanitärinstallationen</option>
+                                <option value="Kueche">Küchenmontage</option>
+                                <option value="Moebel">Möbelmontage</option>
+                                <option value="Umzug">Umzugsservice</option>
+                                <option value="Andere">Sonstiges</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message">Nachricht *</label>
+                            <textarea id="message" class="form-control" required
+                                placeholder="Beschreiben Sie Ihr Anliegen..."></textarea>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="file-upload">Bilder-Upload (optional)</label>
+                            <input type="file" id="file-upload" class="form-control file-upload" accept="image/*"
+                                multiple>
+                            <small style="color: #666; margin-top: 5px; display: block;">Laden Sie Fotos hoch, um uns
+                                Ihr Projekt vorab zu zeigen.</small>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="privacy" required>
+                            <label for="privacy">Ich stimme der Verarbeitung meiner Daten gemäß der <a
+                                    href="datenschutz.html"
+                                    style="color: var(--primary-color);">Datenschutzerklärung</a> zu. *</label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary" style="margin-top: 25px; width: 100%;">SEND
+                            REQUEST</button>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Google Maps Integration -->
+            <div class="map-container">
+                <!-- Embedded Google Map targeting Scharnhorststraße 28, München -->
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2658.6473523528247!2d11.520443215682897!3d48.19253407922756!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479e763b333486c3%3A0xe9620fc1ec908c69!2sScharnhorststra%C3%9Fe%2028%2C%2080992%20M%C3%BCnchen!5e0!3m2!1sde!2sde!4v1689234850029!5m2!1sde!2sde"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>ISAR RENOVIERUNG</h3>
+                    <p>Wir transformieren Räume in Lebensqualität. Ihr professioneller Partner für Renovierung und
+                        Umzug.</p>
+                    <div class="social-icons" style="margin-top: 15px;">
+                        <a href="#" style="color: var(--primary-color); font-size: 1.2rem; margin-right: 15px;"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a href="#" style="color: var(--primary-color); font-size: 1.2rem; margin-right: 15px;"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" style="color: var(--primary-color); font-size: 1.2rem;"><i
+                                class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Kontakt</h3>
+                    <p><i class="fa-solid fa-location-dot"></i> Scharnhorststraße 28, <br>80992 München, Bayern</p>
+                    <p><i class="fa-solid fa-phone"></i> +49 155 6628 4478</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@isar-renovierung.de</p>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="ueber-uns.html">Über Uns</a></li>
+                        <li><a href="leistungen.html">Leistungen</a></li>
+                        <li><a href="galerie.html">Galerie</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Rechtliches</h3>
+                    <ul class="footer-links">
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                        <li><a href="agb.html">AGB</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Isar Renovierung – All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script>
+        // Pre-select service based on URL parameter
+        document.addEventListener('DOMContentLoaded', () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const serviceParam = urlParams.get('service');
+            if (serviceParam) {
+                const select = document.getElementById('project-type');
+                switch (serviceParam) {
+                    case 'renovierung': select.value = 'Renovierung'; break;
+                    case 'badezimmer': select.value = 'Badezimmer'; break;
+                    case 'sanitaer': select.value = 'Sanitaer'; break;
+                    case 'kueche': select.value = 'Kueche'; break;
+                    case 'moebel': select.value = 'Moebel'; break;
+                    case 'umzug': select.value = 'Umzug'; break;
+                }
+            }
+        });
+    </script>
+</body>
+
+</html>

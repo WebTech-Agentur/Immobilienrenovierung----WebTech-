@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leistungen | Isar Renovierung</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+            padding: 150px 0 80px;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .service-detail {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            margin-bottom: 80px;
+            padding-bottom: 80px;
+            border-bottom: 1px solid var(--light-gray);
+        }
+
+        .service-detail.reverse {
+            grid-template-columns: 1fr 1fr;
+            direction: rtl;
+        }
+
+        .service-detail.reverse>* {
+            direction: ltr;
+        }
+
+        .service-detail-text h2 {
+            font-size: 2rem;
+            color: var(--black);
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .service-detail-text h2 i {
+            color: var(--primary-color);
+        }
+
+        .service-detail-text p {
+            margin-bottom: 15px;
+            color: #555;
+        }
+
+        .service-detail-text ul {
+            margin-bottom: 25px;
+            list-style: none;
+        }
+
+        .service-detail-text ul li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .service-detail-text ul li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        .service-detail-image img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+
+            .service-detail,
+            .service-detail.reverse {
+                grid-template-columns: 1fr;
+                direction: ltr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">ISAR<span>RENOVIERUNG</span></a>
+            <div class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="ueber-uns.html">Über Uns</a></li>
+                <li><a href="leistungen.html" class="active">Leistungen</a></li>
+                <li><a href="galerie.html">Galerie</a></li>
+                <li><a href="kontakt.html">Kontakt</a></li>
+                <li><a href="dashboard-login.html" style="color: var(--primary-color);"><i
+                            class="fa-solid fa-user-circle"></i> Login</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="page-hero"
+        style="background-image: url('https://images.unsplash.com/photo-1513694203232-719a280e022f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');">
+        <div class="container">
+            <h1>Unsere Leistungen</h1>
+            <p>Premium-Services für Ihr Zuhause. Alles aus einer Hand.</p>
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="container">
+
+            <!-- Service 1 -->
+            <div class="service-detail" id="renovierung">
+                <div class="service-detail-text">
+                    <h2><i class="fa-solid fa-house-chimney-window"></i> Komplette Immobilienrenovierung</h2>
+                    <p>Wir übernehmen die vollständige Sanierung Ihrer Immobilie. Von der Entkernung bis zur
+                        schlüsselfertigen Übergabe koordinieren wir alle Gewerke.</p>
+                    <ul>
+                        <li>Vollständiges Projektmanagement</li>
+                        <li>Hochwertige Materialien & exakte Verarbeitung</li>
+                        <li>Transparente Kostenkontrolle</li>
+                    </ul>
+                    <a href="kontakt.html?service=renovierung" class="btn btn-primary">GET FREE QUOTE</a>
+                </div>
+                <div class="service-detail-image">
+                    <img src="https://images.unsplash.com/photo-1600607686527-6fb886090705?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                        alt="Komplette Immobilienrenovierung">
+                </div>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="service-detail reverse" id="badezimmer">
+                <div class="service-detail-text">
+                    <h2><i class="fa-solid fa-bath"></i> Badezimmerrenovierung</h2>
+                    <p>Verwandeln Sie Ihr altes Bad in eine moderne Wellness-Oase. Wir realisieren maßgeschneiderte
+                        Badkonzepte nach Ihren Vorstellungen.</p>
+                    <ul>
+                        <li>Fliesenlegen & Natursteinarbeiten</li>
+                        <li>Barrierefreie Duschlösungen</li>
+                        <li>Moderne Licht- und Raumkonzepte</li>
+                    </ul>
+                    <a href="kontakt.html?service=badezimmer" class="btn btn-primary">GET FREE QUOTE</a>
+                </div>
+                <div class="service-detail-image">
+                    <img src="https://images.unsplash.com/photo-1620626011761-996317b8d101?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                        alt="Badezimmerrenovierung">
+                </div>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="service-detail" id="sanitaer">
+                <div class="service-detail-text">
+                    <h2><i class="fa-solid fa-wrench"></i> Sanitärinstallationen (Wasser)</h2>
+                    <p>Professionelle Verlegung und Erneuerung von Wasserleitungen. Sicher, verlässlich und nach
+                        aktuellen DIN-Normen.</p>
+                    <ul>
+                        <li>Neuverlegung von Wasser- und Abwasserleitungen</li>
+                        <li>Installation von Wasserzählern und Filtern</li>
+                        <li>Austausch defekter Armaturen</li>
+                    </ul>
+                    <a href="kontakt.html?service=sanitaer" class="btn btn-primary">GET FREE QUOTE</a>
+                </div>
+                <div class="service-detail-image">
+                    <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                        alt="Sanitärinstallation">
+                </div>
+            </div>
+
+            <!-- Service 4 -->
+            <div class="service-detail reverse" id="kueche">
+                <div class="service-detail-text">
+                    <h2><i class="fa-solid fa-sink"></i> Küchenmontage</h2>
+                    <p>Wir bauen Ihre neue Küche fachgerecht auf. Inklusive aller Wasser- und Elektroanschlüsse für
+                        einen nahtlosen Start.</p>
+                    <ul>
+                        <li>Passgenaue Arbeitsplatten-Anpassung</li>
+                        <li>Fachgerechter Anschluss der Elektrogeräte</li>
+                        <li>Montage von Ikea, Nobilia & Co.</li>
+                    </ul>
+                    <a href="kontakt.html?service=kueche" class="btn btn-primary">GET FREE QUOTE</a>
+                </div>
+                <div class="service-detail-image">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                        alt="Küchenmontage">
+                </div>
+            </div>
+
+            <!-- Service 5 -->
+            <div class="service-detail" id="moebel">
+                <div class="service-detail-text">
+                    <h2><i class="fa-solid fa-couch"></i> Möbelmontage</h2>
+                    <p>Stressfreier Aufbau Ihrer Möbel. Ob Schrankwände, Betten oder Büromöbel – wir montieren schnell
+                        und sicher.</p>
+                    <ul>
+                        <li>Schneller und sicherer Aufbau</li>
+                        <li>Wandmontage und Sicherung</li>
+                        <li>Entsorgung von Verpackungsmaterial</li>
+                    </ul>
+                    <a href="kontakt.html?service=moebel" class="btn btn-primary">GET FREE QUOTE</a>
+                </div>
+                <div class="service-detail-image">
+                    <img src="https://images.unsplash.com/photo-1534349762230-e0cadf78f5da?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                        alt="Möbelmontage">
+                </div>
+            </div>
+
+            <!-- Service 6 -->
+            <div class="service-detail reverse" id="umzug"
+                style="border-bottom: none; margin-bottom: 0; padding-bottom: 0;">
+                <div class="service-detail-text">
+                    <h2><i class="fa-solid fa-truck-moving"></i> Umzugsservice</h2>
+                    <p>Wir organisieren Ihren Umzug in München und Umgebung. Sorgfältige Verpackung, sicherer Transport
+                        und Aufbau am neuen Ort.</p>
+                    <ul>
+                        <li>Bereitstellung von Umzugskartons</li>
+                        <li>Sicherer Möbeltransport</li>
+                        <li>Rundum-Sorglos-Paket (Ein- und Auspackservice)</li>
+                    </ul>
+                    <a href="kontakt.html?service=umzug" class="btn btn-primary">GET FREE QUOTE</a>
+                </div>
+                <div class="service-detail-image">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+                        alt="Umzugsservice">
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Global Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-col">
+                    <h3>ISAR RENOVIERUNG</h3>
+                    <p>Wir transformieren Räume in Lebensqualität. Ihr professioneller Partner für Renovierung und
+                        Umzug.</p>
+                    <div class="social-icons" style="margin-top: 15px;">
+                        <a href="#" style="color: var(--primary-color); font-size: 1.2rem; margin-right: 15px;"><i
+                                class="fa-brands fa-facebook"></i></a>
+                        <a href="#" style="color: var(--primary-color); font-size: 1.2rem; margin-right: 15px;"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" style="color: var(--primary-color); font-size: 1.2rem;"><i
+                                class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Kontakt</h3>
+                    <p><i class="fa-solid fa-location-dot"></i> Scharnhorststraße 28, <br>80992 München, Bayern</p>
+                    <p><i class="fa-solid fa-phone"></i> +49 155 6628 4478</p>
+                    <p><i class="fa-solid fa-envelope"></i> info@isar-renovierung.de</p>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="ueber-uns.html">Über Uns</a></li>
+                        <li><a href="leistungen.html">Leistungen</a></li>
+                        <li><a href="galerie.html">Galerie</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h3>Rechtliches</h3>
+                    <ul class="footer-links">
+                        <li><a href="impressum.html">Impressum</a></li>
+                        <li><a href="datenschutz.html">Datenschutz</a></li>
+                        <li><a href="agb.html">AGB</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Isar Renovierung – All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="imageLightbox" class="lightbox-modal">
+        <span class="lightbox-close">&times;</span>
+        <img class="lightbox-content" id="lightboxImage">
+    </div>
+
+    <script src="js/script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightbox = document.getElementById('imageLightbox');
+            const lightboxImg = document.getElementById('lightboxImage');
+            const closeBtn = document.querySelector('.lightbox-close');
+            const serviceImages = document.querySelectorAll('.service-detail-image img');
+
+            serviceImages.forEach(img => {
+                img.addEventListener('click', () => {
+                    lightbox.style.display = 'flex';
+                    // Trigger reflow for animation
+                    void lightbox.offsetWidth;
+                    lightbox.classList.add('active');
+                    lightboxImg.src = img.src;
+                });
+            });
+
+            const closeLightbox = () => {
+                lightbox.classList.remove('active');
+                setTimeout(() => {
+                    if (!lightbox.classList.contains('active')) {
+                        lightbox.style.display = 'none';
+                    }
+                }, 400); // Match CSS transition duration
+            };
+
+            closeBtn.addEventListener('click', closeLightbox);
+
+            // Close on background click
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

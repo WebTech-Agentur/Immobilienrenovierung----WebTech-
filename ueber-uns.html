@@ -4,12 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Über Uns | Isar Renovierung</title>
+    <title>Über Uns | Luxora Renovation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        .page-header {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1541888086425-d81bb19040ff?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+        .page-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('luxora_about_hero_v2_1772625570485.png') center/cover no-repeat;
             padding: 150px 0 80px;
             text-align: center;
             color: var(--white);
@@ -38,26 +38,6 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
 
-        .values-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .value-card {
-            text-align: center;
-            padding: 30px;
-            background: var(--light-gray);
-            border-radius: 8px;
-        }
-
-        .value-card i {
-            font-size: 2rem;
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-
         @media (max-width: 768px) {
             .about-content {
                 grid-template-columns: 1fr;
@@ -71,32 +51,33 @@
     <!-- Navigation (Same as index) -->
     <nav class="navbar">
         <div class="container">
-            <a href="index.html" class="logo">ISAR<span>RENOVIERUNG</span></a>
+            <a href="index.html" class="logo">LUXORA<span>RENOVATION</span></a>
             <div class="hamburger">
                 <div></div>
                 <div></div>
                 <div></div>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">Startseite</a></li>
                 <li><a href="ueber-uns.html" class="active">Über Uns</a></li>
                 <li><a href="leistungen.html">Leistungen</a></li>
                 <li><a href="galerie.html">Galerie</a></li>
                 <li><a href="kontakt.html">Kontakt</a></li>
+                <!-- Special Feature Link -->
                 <li><a href="dashboard-login.html" style="color: var(--primary-color);"><i
-                            class="fa-solid fa-user-circle"></i> Login</a></li>
+                            class="fa-solid fa-user-circle"></i> Anmelden</a></li>
             </ul>
         </div>
     </nav>
 
     <!-- Page Header -->
-    <header class="page-hero"
-        style="background-image: url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80');">
-        <div class="container">
+    <section class="about-hero">
+        <div class="hero-overlay">
             <h1>Ihr Renovierungspartner in München</h1>
-            <p>Erfahrung, Qualität und Zuverlässigkeit seit Tag eins.</p>
+            <p>Qualität. Zuverlässigkeit. Perfektion bis ins Detail.</p>
         </div>
-    </header>
+    </section>
+
 
     <!-- About Content -->
     <section class="section">
@@ -104,7 +85,8 @@
             <div class="about-content">
                 <div class="about-text">
                     <h2>Wir bauen Visionen.</h2>
-                    <p>Isar Renovierung ist Ihr Premium-Partner für hochwertige Immobilienrenovierungen und stressfreie
+                    <p>Luxora Renovation ist Ihr Premium-Partner für hochwertige Immobilienrenovierungen und
+                        stressfreie
                         Umzüge im Großraum München. Mit Leidenschaft fürs Detail und einem klaren Fokus auf
                         Kundenzufriedenheit transformieren wir Wohnräume in echte Wohlfühloasen.</p>
                     <p>Unser multidisziplinäres Team aus erfahrenen Handwerkern und Planern gewährleistet, dass jedes
@@ -120,33 +102,39 @@
         </div>
     </section>
 
-    <!-- Values -->
-    <section class="section" style="background-color: var(--white);">
+    <!-- Values Section -->
+    <section class="values-section">
         <div class="container">
-            <h2 class="section-title">Unsere Werte</h2>
+            <h2>Unsere Werte</h2>
+            <div class="gold-line"></div>
+
             <div class="values-grid">
                 <div class="value-card">
-                    <i class="fa-solid fa-handshake"></i>
+                    <i class="fas fa-handshake"></i>
                     <h3>Zuverlässigkeit</h3>
-                    <p>Ein Wort ist ein Wort. Wir halten uns streng an vereinbarte Termine und Absprachen.</p>
+                    <p>Ein Wort ist ein Wort. Wir halten uns strikt an vereinbarte Termine und Absprachen.</p>
                 </div>
+
                 <div class="value-card">
-                    <i class="fa-solid fa-ruler-combined"></i>
+                    <i class="fas fa-ruler-combined"></i>
                     <h3>Präzision</h3>
                     <p>Millimetergenaue Arbeit für perfekte und langlebige Ergebnisse.</p>
                 </div>
+
                 <div class="value-card">
-                    <i class="fa-solid fa-broom"></i>
+                    <i class="fas fa-broom"></i>
                     <h3>Sauberkeit</h3>
                     <p>Wir hinterlassen Ihre Baustelle jeden Tag besenrein und ordentlich.</p>
                 </div>
+
                 <div class="value-card">
-                    <i class="fa-regular fa-clock"></i>
+                    <i class="fas fa-clock"></i>
                     <h3>Termintreue</h3>
                     <p>Ihr Zeitplan ist unser Leitfaden. Pünktliche Übergabe garantiert.</p>
                 </div>
+
                 <div class="value-card">
-                    <i class="fa-solid fa-magnifying-glass-chart"></i>
+                    <i class="fas fa-magnifying-glass-chart"></i>
                     <h3>Transparenz</h3>
                     <p>Keine versteckten Kosten. Volle Einsicht in alle Arbeitsschritte.</p>
                 </div>
@@ -159,7 +147,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col">
-                    <h3>ISAR RENOVIERUNG</h3>
+                    <h3>LUXORA RENOVATION</h3>
                     <p>Wir transformieren Räume in Lebensqualität. Ihr professioneller Partner für Renovierung und
                         Umzug.</p>
                     <div class="social-icons" style="margin-top: 15px;">
@@ -176,13 +164,14 @@
                     <h3>Kontakt</h3>
                     <p><i class="fa-solid fa-location-dot"></i> Scharnhorststraße 28, <br>80992 München, Bayern</p>
                     <p><i class="fa-solid fa-phone"></i> +49 155 6628 4478</p>
-                    <p><i class="fa-solid fa-envelope"></i> info@isar-renovierung.de</p>
+                    <p><i class="fa-solid fa-envelope"></i> <a
+                            href="mailto:info@webtech-agentur.de">info@luxora-renovation.de</a></p>
                 </div>
 
                 <div class="footer-col">
-                    <h3>Quick Links</h3>
+                    <h3>Schnellzugriff</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html">Startseite</a></li>
                         <li><a href="ueber-uns.html">Über Uns</a></li>
                         <li><a href="leistungen.html">Leistungen</a></li>
                         <li><a href="galerie.html">Galerie</a></li>
@@ -201,7 +190,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 Isar Renovierung – All rights reserved</p>
+                <p>&copy; 2026 Luxora Renovation – Alle Rechte vorbehalten</p>
             </div>
         </div>
     </footer>

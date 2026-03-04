@@ -4,15 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vorher-Nachher Galerie | Isar Renovierung</title>
+    <title>Before & After Gallery | Luxora Renovation</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        .page-header {
-            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80') center/cover no-repeat;
+        .page-hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url('luxora_gallery_bright.png') center/cover no-repeat;
             padding: 150px 0 80px;
             text-align: center;
             color: var(--white);
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
         }
 
         .gallery-item {
@@ -109,20 +110,21 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <a href="index.html" class="logo">ISAR<span>RENOVIERUNG</span></a>
+            <a href="index.html" class="logo">LUXORA<span>RENOVATION</span></a>
             <div class="hamburger">
                 <div></div>
                 <div></div>
                 <div></div>
             </div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">Startseite</a></li>
                 <li><a href="ueber-uns.html">Über Uns</a></li>
                 <li><a href="leistungen.html">Leistungen</a></li>
                 <li><a href="galerie.html" class="active">Galerie</a></li>
                 <li><a href="kontakt.html">Kontakt</a></li>
+                <!-- Special Feature Link -->
                 <li><a href="dashboard-login.html" style="color: var(--primary-color);"><i
-                            class="fa-solid fa-user-circle"></i> Login</a></li>
+                            class="fa-solid fa-user-circle"></i> Anmelden</a></li>
             </ul>
         </div>
     </nav>
@@ -130,88 +132,61 @@
     <!-- Page Header -->
     <header class="page-hero gallery-hero">
         <div class="container">
-            <h1>Before & After Transformations</h1>
-            <p>See how we turn outdated spaces into premium living environments.</p>
+            <h1>Vorher-Nachher Transformationen</h1>
+            <p>See how we transform outdated spaces into high-quality living environments.</p>
             <a href="#projects" class="btn btn-gold" style="margin-top: 30px;">View Transformations</a>
         </div>
     </header>
-
-    <section class="section" id="projects">
+    <section class="galerie-section">
         <div class="container">
+            <!-- Premium Küchenmodernisierung -->
+            <div class="galerie-item">
+                <h3>Premium Küchenmodernisierung</h3>
+                <div class="vorher-nachher-container">
+                    <div class="bild vorher">
+                        <img src="images/kueche-vorher-vintage.png"
+                            alt="Küche vor der Renovierung - Vintage 70er Jahre Stil">
+                        <span>VORHER</span>
+                    </div>
 
-            <!-- Project 1: Kitchen -->
-            <div class="gallery-item" style="background: transparent; box-shadow: none;">
-                <div class="gallery-showcase">
-                    <div class="gallery-img-container gallery-image-before">
-                        <span class="badge-before">BEFORE</span>
-                        <!-- Very old kitchen -->
-                        <img src="images/before_kitchen_old_1772182820915.png" alt="Alte, veraltete Küche"
-                            class="gallery-interactive-img">
+                    <div class="bild nachher">
+                        <img src="images/kueche-nachher.jpg" alt="Küche nach der Renovierung">
+                        <span>NACHHER</span>
                     </div>
-                    <div class="gallery-img-container gallery-image-after">
-                        <span class="badge-after">AFTER</span>
-                        <!-- Modern clean kitchen -->
-                        <img src="images/after_kitchen_modern_1772182845192.png" alt="Moderne Luxusküche"
-                            class="gallery-interactive-img">
-                    </div>
-                </div>
-                <div class="gallery-info-center">
-                    <h3>Premium Kitchen Transformation</h3>
-                    <p>Komplette Entkernung einer veralteten Küche mit braunen Schränken und defekten Fliesen. Einbau
-                        einer minimalistischen Designerküche mit hochwertigen Geräten, dunkler Steinarbeitsplatte und
-                        moderner LED-Lichtgestaltung. Das Ergebnis: Eine helle, moderne und luxuriöse Atmosphäre.</p>
                 </div>
             </div>
 
-            <!-- Project 2: Bathroom -->
-            <div class="gallery-item" style="background: transparent; box-shadow: none;">
-                <div class="gallery-showcase">
-                    <div class="gallery-img-container gallery-image-before">
-                        <span class="badge-before">BEFORE</span>
-                        <!-- Very old bathroom -->
-                        <img src="images/before_bathroom_old_1772182864983.png" alt="Altes, unmodernes Badezimmer"
-                            class="gallery-interactive-img">
+            <!-- Luxus Badezimmerrenovierung -->
+            <div class="galerie-item">
+                <h3>Luxus Badezimmerrenovierung</h3>
+                <div class="vorher-nachher-container">
+                    <div class="bild vorher">
+                        <img src="images/bad-vorher-vintage.png"
+                            alt="Badezimmer vor der Renovierung - Vintage 70er Jahre Stil">
+                        <span>VORHER</span>
                     </div>
-                    <div class="gallery-img-container gallery-image-after">
-                        <span class="badge-after">AFTER</span>
-                        <!-- Modern spa bathroom -->
-                        <img src="images/after_bathroom_modern_1772182927750.png" alt="Modernes High-End Badezimmer"
-                            class="gallery-interactive-img">
+                    <div class="bild nachher">
+                        <img src="images/bad-nachher.jpg" alt="Badezimmer nach der Renovierung">
+                        <span>NACHHER</span>
                     </div>
-                </div>
-                <div class="gallery-info-center">
-                    <h3>Luxury Bathroom Renovation</h3>
-                    <p>Vollständige Modernisierung eines in die Jahre gekommenen Badezimmers mit dunklen Fliesen und
-                        schwacher Beleuchtung. Installation von großformatigen Fliesen, einer bodengleichen Walk-In
-                        Dusche und einem schwebenden Waschtisch, abgerundet mit stimmungsvoller LED-Spiegelbeleuchtung.
-                        Eine wahre Spa-Oase.</p>
                 </div>
             </div>
 
-            <!-- Project 3: Complete Property -->
-            <div class="gallery-item" style="background: transparent; box-shadow: none;">
-                <div class="gallery-showcase">
-                    <div class="gallery-img-container gallery-image-before">
-                        <span class="badge-before">BEFORE</span>
-                        <!-- Old Living Room -->
-                        <img src="images/before_living_old_1772182946961.png" alt="Altes, veraltetes Wohnzimmer"
-                            class="gallery-interactive-img">
+            <!-- Komplette Immobilien-Aufwertung -->
+            <div class="galerie-item">
+                <h3>Komplette Immobilien-Aufwertung</h3>
+                <div class="vorher-nachher-container">
+                    <div class="bild vorher">
+                        <img src="images/immobilie-vorher-vintage.png"
+                            alt="Immobilie vor der Renovierung - Vintage 70er Jahre Stil">
+                        <span>VORHER</span>
                     </div>
-                    <div class="gallery-img-container gallery-image-after">
-                        <span class="badge-after">AFTER</span>
-                        <!-- Luxury Living Room -->
-                        <img src="images/after_living_modern_1772182966136.png" alt="Modernes, luxuriöses Wohnzimmer"
-                            class="gallery-interactive-img">
+                    <div class="bild nachher">
+                        <img src="images/wohnzimmer-nachher.jpg" alt="Wohnzimmer nach der Renovierung">
+                        <span>NACHHER</span>
                     </div>
-                </div>
-                <div class="gallery-info-center" style="margin-bottom: 0;">
-                    <h3>Complete Property Upgrade</h3>
-                    <p>Umfassende Neugestaltung des gesamten Wohnbereichs. Das dunkle, beengte Raumgefühl wurde durch
-                        einen offenen Grundriss, nahtlose Spachtelböden, helle Panorama-Fenster und modernste Smart-Home
-                        Technik ausgetauscht. Ein beeindruckendes Vorher-Nachher Wohlfühlkonzept.</p>
                 </div>
             </div>
-
         </div>
     </section>
 
@@ -220,7 +195,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-col">
-                    <h3>ISAR RENOVIERUNG</h3>
+                    <h3>LUXORA RENOVATION</h3>
                     <p>Wir transformieren Räume in Lebensqualität. Ihr professioneller Partner für Renovierung und
                         Umzug.</p>
                     <div class="social-icons" style="margin-top: 15px;">
@@ -237,13 +212,14 @@
                     <h3>Kontakt</h3>
                     <p><i class="fa-solid fa-location-dot"></i> Scharnhorststraße 28, <br>80992 München, Bayern</p>
                     <p><i class="fa-solid fa-phone"></i> +49 155 6628 4478</p>
-                    <p><i class="fa-solid fa-envelope"></i> info@isar-renovierung.de</p>
+                    <p><i class="fa-solid fa-envelope"></i> <a
+                            href="mailto:info@webtech-agentur.de">info@luxora-renovation.de</a></p>
                 </div>
 
                 <div class="footer-col">
-                    <h3>Quick Links</h3>
+                    <h3>Schnellzugriff</h3>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="index.html">Startseite</a></li>
                         <li><a href="ueber-uns.html">Über Uns</a></li>
                         <li><a href="leistungen.html">Leistungen</a></li>
                         <li><a href="galerie.html">Galerie</a></li>
@@ -262,7 +238,7 @@
             </div>
 
             <div class="footer-bottom">
-                <p>&copy; 2026 Isar Renovierung – All rights reserved</p>
+                <p>&copy; 2026 Luxora Renovation – Alle Rechte vorbehalten</p>
             </div>
         </div>
     </footer>

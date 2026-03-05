@@ -194,13 +194,78 @@ ul {
     cursor: pointer;
     flex-direction: column;
     gap: 5px;
+    z-index: 1001;
 }
 
 .hamburger div {
-    width: 25px;
+    width: 28px;
     height: 3px;
     background-color: var(--white);
     transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Mobile Nav Styles */
+@media (max-width: 992px) {
+    .hamburger {
+        display: flex;
+    }
+
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 0;
+        height: 100vh;
+        width: 70%;
+        background-color: var(--black);
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 30px;
+        transition: right 0.5s cubic-bezier(0.77, 0.2, 0.05, 1.0);
+        box-shadow: -10px 0 30px rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .nav-links li {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+
+    .nav-links.active li {
+        opacity: 1;
+        transform: translateX(0);
+        transition: all 0.4s ease forwards;
+    }
+
+    /* Staggered animation for links */
+    .nav-links.active li:nth-child(1) {
+        transition-delay: 0.1s;
+    }
+
+    .nav-links.active li:nth-child(2) {
+        transition-delay: 0.2s;
+    }
+
+    .nav-links.active li:nth-child(3) {
+        transition-delay: 0.3s;
+    }
+
+    .nav-links.active li:nth-child(4) {
+        transition-delay: 0.4s;
+    }
+
+    .nav-links.active li:nth-child(5) {
+        transition-delay: 0.5s;
+    }
+
+    .nav-links.active li:nth-child(6) {
+        transition-delay: 0.6s;
+    }
 }
 
 /* Premium Hero Section */
@@ -333,13 +398,30 @@ ul {
 }
 
 @media (max-width: 768px) {
+    .premium-hero {
+        background-position: center;
+        padding-top: 60px;
+    }
+
     .premium-hero h1 {
-        font-size: 3rem;
+        font-size: 2.8rem;
+    }
+
+    .premium-hero p {
+        font-size: 1.1rem;
+        margin-bottom: 30px;
     }
 
     .hero-buttons {
         flex-direction: column;
-        align-items: center;
+        gap: 15px;
+        width: 100%;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+
+    .hero-buttons a {
+        width: 100%;
     }
 }
 
@@ -530,13 +612,26 @@ ul {
     font-style: italic;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+    .dashboard-container {
+        transform: none !important;
+        padding: 20px;
+    }
+
     .phasen-navigation {
         flex-wrap: wrap;
+        gap: 5px;
     }
 
     .phasen-navigation button {
-        flex-basis: 45%;
+        flex: 1 1 45%;
+        font-size: 0.7rem;
+    }
+
+    .vorher-nachher {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
     }
 }
 
@@ -554,8 +649,14 @@ ul {
 
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+@media (max-width: 480px) {
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
 }
 
 .service-card {
@@ -769,34 +870,9 @@ footer {
 
 /* Responsive */
 @media (max-width: 900px) {
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 100%;
-        left: 0;
+    .nav-links li {
         width: 100%;
-        background-color: var(--black);
-        padding: 20px;
         text-align: center;
-        border-top: 1px solid var(--border-color);
-    }
-
-    .nav-links.active {
-        display: flex;
-    }
-
-    .hamburger {
-        display: flex;
-    }
-
-    .hero h1 {
-        font-size: 2.8rem;
-    }
-
-    .hero-btns {
-        flex-direction: column;
-        padding: 0 40px;
     }
 }
 
@@ -866,6 +942,21 @@ footer {
     font-size: 1.2rem;
     max-width: 800px;
     margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    .page-hero {
+        min-height: 50vh;
+        padding-top: 100px;
+    }
+
+    .page-hero h1 {
+        font-size: 2.2rem;
+    }
+
+    .page-hero p {
+        font-size: 1rem;
+    }
 }
 
 /* Service Images Hover Effect */
@@ -1217,11 +1308,11 @@ footer {
 
 @media (max-width: 768px) {
     .leistungen-hero-kreativ {
-        height: 60vh;
+        height: 65vh;
     }
 
     .leistungen-hero-kreativ h1 {
-        font-size: 3.5rem;
+        font-size: 2.5rem;
     }
 
     .leistungen-hero-kreativ p {

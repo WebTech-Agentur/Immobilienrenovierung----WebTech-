@@ -1486,7 +1486,7 @@ footer {
 
 .values-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(4, 1fr);
     gap: 30px;
     max-width: 1200px;
     margin: auto;
@@ -1547,8 +1547,106 @@ footer {
     left: 100%;
 }
 
+@media (max-width: 1024px) {
+    .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media (max-width: 768px) {
     .values-section {
         padding: 70px 20px;
     }
+}
+
+@media (max-width: 600px) {
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Creative Card Component */
+.creative-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    height: 100%;
+}
+
+.creative-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(212, 175, 55, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.creative-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-color);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 0 0 20px rgba(212, 175, 55, 0.2);
+}
+
+.creative-card:hover::before {
+    opacity: 1;
+}
+
+.creative-card .circle {
+    width: 70px;
+    height: 70px;
+    background: var(--primary-color);
+    color: var(--white);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+    transition: transform 0.4s ease;
+    z-index: 1;
+}
+
+.creative-card:hover .circle {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.creative-card h3 {
+    font-size: 1.5rem;
+    color: var(--black);
+    margin: 0;
+    z-index: 1;
+}
+
+.creative-card p {
+    color: #666;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+    z-index: 1;
+}
+
+/* Base adjustment for dark background usage */
+.section-dark .creative-card h3 {
+    color: var(--white);
+}
+
+.section-dark .creative-card p {
+    color: #ccc;
 }

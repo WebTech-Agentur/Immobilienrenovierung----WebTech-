@@ -1397,6 +1397,37 @@ footer {
     }
 }
 
+@media (max-width: 768px) {
+    .galerie-section {
+        padding: 60px 0;
+    }
+
+    .galerie-item {
+        margin-bottom: 60px;
+    }
+
+    .galerie-item h3 {
+        font-size: 1.5rem;
+        margin-bottom: 25px;
+    }
+
+    .vorher-nachher-container {
+        padding: 15px;
+        gap: 15px;
+    }
+
+    .bild {
+        height: 250px;
+    }
+
+    .bild span {
+        top: 15px;
+        left: 15px;
+        padding: 6px 14px;
+        font-size: 0.75rem;
+    }
+}
+
 /* ===== REALISTISCHER VORHER EFFEKT ===== */
 
 .bild.vorher img {

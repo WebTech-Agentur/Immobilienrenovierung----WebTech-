@@ -11,80 +11,7 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon.png">
 
-    <style>
-        .page-hero {
-            background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.2)), url('luxora_gallery_bright.png') center/cover no-repeat;
-            padding: 150px 0 80px;
-            text-align: center;
-            color: var(--white);
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Lightbox Improvements */
-        .lightbox-modal {
-            display: none;
-            position: fixed;
-            z-index: 2000;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.95);
-            align-items: center;
-            justify-content: center;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .lightbox-modal.active {
-            opacity: 1;
-        }
-
-        .lightbox-content {
-            max-width: 90%;
-            max-height: 80%;
-            border-radius: 8px;
-            box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
-            transform: scale(0.9);
-            transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-        }
-
-        .lightbox-modal.active .lightbox-content {
-            transform: scale(1);
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 30px;
-            right: 40px;
-            color: var(--white);
-            font-size: 40px;
-            font-weight: bold;
-            cursor: pointer;
-            z-index: 2001;
-            transition: color 0.3s;
-        }
-
-        .lightbox-close:hover {
-            color: var(--primary-color);
-        }
-
-        @media (max-width: 768px) {
-            .page-hero {
-                padding: 120px 0 60px;
-            }
-
-            .page-hero h1 {
-                font-size: 2rem;
-            }
-
-            .lightbox-close {
-                top: 20px;
-                right: 25px;
-                font-size: 30px;
-            }
-        }
-    </style>
+    <!-- External styles handled by global styles.css -->
 </head>
 
 <body>
@@ -112,11 +39,10 @@
     </nav>
 
     <!-- Page Header -->
-    <header class="page-hero gallery-hero">
+    <header class="page-hero" style="background-image: url('luxora_gallery_bright.png');">
         <div class="container">
-            <h1>Vorher-Nachher Transformationen</h1>
-            <p>See how we transform outdated spaces into high-quality living environments.</p>
-            <a href="#projects" class="btn btn-gold" style="margin-top: 30px;">View Transformations</a>
+            <h1>Vorher-Nachher <span>Transformationen</span></h1>
+            <p>Sehen Sie, wie wir veraltete Räume in Lebensqualität verwandeln.</p>
         </div>
     </header>
     <section class="galerie-section">

@@ -1,4 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Reveal Animation on Scroll
+    const observerOptions = {
+        threshold: 0.15,
+        rootMargin: "0px 0px -50px 0px"
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('revealed');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    // Apply reveal to sections and specific elements
+    document.querySelectorAll('.section, .service-card, .advantage-item, .process-step, .creative-card').forEach(el => {
+        el.classList.add('reveal-element');
+        revealObserver.observe(el);
+    });
+
     // Mobile navigation toggle
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
@@ -64,9 +85,27 @@ document.addEventListener('DOMContentLoaded', () => {
             const phase = button.getAttribute('data-phase');
             const data = phases[phase];
 
-            document.getElementById('phasen-text').textContent = data.text;
-            document.getElementById('material-text').textContent = data.material;
-            document.getElementById('fortschritt-wert').style.width = data.progress;
+            const phaseText = document.getElementById('phasen-text');
+            const materialText = document.getElementById('material-text');
+            const progressVal = document.getElementById('fortschritt-wert');
+
+            // Fade out effect
+            [phaseText, materialText].forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(10px)';
+            });
+
+            setTimeout(() => {
+                phaseText.textContent = data.text;
+                materialText.textContent = data.material;
+                progressVal.style.width = data.progress;
+
+                [phaseText, materialText].forEach(el => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                    el.style.transition = 'all 0.4s var(--ease)';
+                });
+            }, 300);
 
             // Reset toggle to Nachher
             isVorher = false;

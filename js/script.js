@@ -1,25 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Reveal Animation on Scroll
-    const observerOptions = {
-        threshold: 0.15,
-        rootMargin: "0px 0px -50px 0px"
-    };
-
-    const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('revealed');
-                revealObserver.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    // Apply reveal to sections and specific elements
-    document.querySelectorAll('.section, .service-card, .advantage-item, .process-step, .creative-card').forEach(el => {
-        el.classList.add('reveal-element');
-        revealObserver.observe(el);
-    });
-
     // Mobile navigation toggle
     const hamburger = document.querySelector('.hamburger');
     const navLinks = document.querySelector('.nav-links');
@@ -85,27 +64,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const phase = button.getAttribute('data-phase');
             const data = phases[phase];
 
-            const phaseText = document.getElementById('phasen-text');
-            const materialText = document.getElementById('material-text');
-            const progressVal = document.getElementById('fortschritt-wert');
-
-            // Fade out effect
-            [phaseText, materialText].forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(10px)';
-            });
-
-            setTimeout(() => {
-                phaseText.textContent = data.text;
-                materialText.textContent = data.material;
-                progressVal.style.width = data.progress;
-
-                [phaseText, materialText].forEach(el => {
-                    el.style.opacity = '1';
-                    el.style.transform = 'translateY(0)';
-                    el.style.transition = 'all 0.4s var(--ease)';
-                });
-            }, 300);
+            document.getElementById('phasen-text').textContent = data.text;
+            document.getElementById('material-text').textContent = data.material;
+            document.getElementById('fortschritt-wert').style.width = data.progress;
 
             // Reset toggle to Nachher
             isVorher = false;
@@ -162,5 +123,76 @@ document.addEventListener('DOMContentLoaded', () => {
                 lines[2].style.transform = 'none';
             }
         });
+    });
+
+    // PREMIUM SCROLL REVEAL
+    const revealElements = document.querySelectorAll('.section, .service-card, .creative-card, .advantage-item, .galerie-item');
+    revealElements.forEach(el => el.classList.add('reveal'));
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
+
+    revealElements.forEach(el => sectionObserver.observe(el));
+
+    // Smooth scroll for all anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            const href = this.getAttribute('href');
+            if (href !== '#') {
+                e.preventDefault();
+                const targetElement = document.querySelector(href);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            }
+        });
+    });
+
+    // COMPARISON SLIDER LOGIC
+    const sliders = document.querySelectorAll('.comparison-slider');
+
+    sliders.forEach(slider => {
+        let isMouseDown = false;
+        const afterImg = slider.querySelector('.after');
+        const handle = slider.querySelector('.handle');
+
+        const moveSlider = (x) => {
+            const rect = slider.getBoundingClientRect();
+            let pos = ((x - rect.left) / rect.width) * 100;
+            if (pos < 0) pos = 0;
+            if (pos > 100) pos = 100;
+
+            afterImg.style.clipPath = `inset(0 0 0 ${pos}%)`;
+            handle.style.left = `${pos}%`;
+        };
+
+        const handleMove = (e) => {
+            if (!isMouseDown) return;
+            const x = e.type.includes('touch') ? e.touches[0].clientX : e.clientX;
+            moveSlider(x);
+        };
+
+        slider.addEventListener('mousedown', () => isMouseDown = true);
+        window.addEventListener('mouseup', () => isMouseDown = false);
+        slider.addEventListener('touchstart', () => isMouseDown = true);
+        window.addEventListener('touchend', () => isMouseDown = false);
+
+        slider.addEventListener('mousemove', handleMove);
+        slider.addEventListener('touchmove', handleMove);
+
+        // Pre-set some value on load
+        afterImg.style.clipPath = `inset(0 0 0 50%)`;
+        handle.style.left = `50%`;
     });
 });

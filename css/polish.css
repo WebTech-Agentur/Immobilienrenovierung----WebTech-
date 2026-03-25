@@ -1,0 +1,536 @@
+/* LUXORA RENOVATION - POLISH LAYER 2026 */
+
+:root {
+    --gold-gradient: linear-gradient(135deg, #D4AF37 0%, #F1C40F 50%, #B3932E 100%);
+    --glass-bg: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --shadow-premium: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--black);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+    border: 2px solid var(--black);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #e6c555;
+}
+
+/* Base Styles Polish */
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Premium Navigation Polish */
+.navbar {
+    backdrop-filter: none;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navbar.scrolled {
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+    padding: 12px 0;
+}
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+    width: 100%;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+/* Hero Section Polish */
+.premium-hero h1 {
+    letter-spacing: -1px;
+    text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.premium-hero h1 span {
+    background: var(--gold-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700 !important;
+    display: inline-block;
+    filter: drop-shadow(0 2px 5px rgba(0,0,0,0.2));
+}
+
+.hero-buttons a {
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+.btn-primary {
+    background: var(--gold-gradient) !important;
+    border: none !important;
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3) !important;
+}
+
+.btn-primary:hover {
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.5) !important;
+    transform: translateY(-3px) scale(1.02);
+}
+
+/* Section Reveal Animation */
+.reveal {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Glassmorphism Cards */
+.creative-card, .service-card, .dashboard-container {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Interactive Dashboard Polish */
+.dashboard-container {
+    background: rgba(26, 26, 26, 0.8) !important;
+    border: 1px solid rgba(212, 175, 55, 0.3) !important;
+}
+
+.fortschritt-balken {
+    background: rgba(255, 255, 255, 0.1) !important;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.2);
+}
+
+#fortschritt-wert {
+    background: var(--gold-gradient) !important;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.6) !important;
+}
+
+/* Advantage Items Polish */
+.advantage-item {
+    background: rgba(244, 244, 244, 0.5);
+    border: 1px solid transparent;
+}
+
+.advantage-item:hover {
+    border-color: rgba(212, 175, 55, 0.3);
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+/* Service Grid Polish */
+.service-card {
+    border: 1px solid rgba(212, 175, 55, 0.1) !important;
+}
+
+.service-card:hover {
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.15) !important;
+}
+
+/* Footer Polish */
+footer {
+    position: relative;
+    overflow: hidden;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--gold-gradient);
+}
+
+/* Process Steps Polish */
+.step-number {
+    background: var(--white) !important;
+    border: 2px solid var(--primary-color) !important;
+    color: var(--primary-color) !important;
+    font-size: 1.8rem !important;
+    transition: all 0.5s ease !important;
+}
+
+.process-step:hover .step-number {
+    background: var(--primary-color) !important;
+    color: var(--white) !important;
+    transform: rotateY(360deg);
+}
+
+/* Floating Animation */
+@keyframes float {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-15px) rotate(1deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+}
+
+.hero-content {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Glassmorphism Tilt Effect (Pure CSS) */
+.service-card, .creative-card, .value-card {
+    transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.5s ease !important;
+}
+
+.service-card:hover, .creative-card:hover, .value-card:hover {
+    transform: translateY(-15px) scale(1.02) !important;
+}
+
+/* Section Title Polish */
+.section-title {
+    font-size: 3rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.section-title::after {
+    width: 100px !important;
+    height: 5px !important;
+    background: var(--gold-gradient) !important;
+    border-radius: 5px;
+}
+
+/* Image Hover Polish */
+.about-image img, .service-detail-image img, .bild img {
+    filter: saturate(1.1);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.about-image img:hover, .service-detail-image img:hover {
+    filter: saturate(1.3) brightness(1.05);
+    box-shadow: 0 30px 60px rgba(0,0,0,0.3) !important;
+}
+
+/* Mobile Polish */
+@media (max-width: 768px) {
+    .nav-links {
+        backdrop-filter: blur(20px);
+        background: rgba(0, 0, 0, 0.9) !important;
+    }
+
+    .section-title {
+        font-size: 2rem !important;
+    }
+}
+
+/* Custom Selection Color */
+::selection {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+/* Premium Service Cards Polish */
+.service-card-premium {
+    background: var(--white);
+    padding: 0; /* Remove padding to let image be full width at top */
+    border-radius: 24px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    text-align: left;
+}
+
+.service-card-image {
+    width: 100%;
+    height: 240px;
+    overflow: hidden;
+    position: relative;
+}
+
+.service-card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.service-card-premium:hover .service-card-image img {
+    transform: scale(1.1);
+}
+
+.service-card-content {
+    padding: 30px 40px 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex-grow: 1;
+}
+
+.service-card-premium:hover {
+    transform: translateY(-12px);
+    box-shadow: 0 30px 60px rgba(212, 175, 55, 0.2);
+    border-color: var(--primary-color);
+}
+
+.service-card-premium i.main-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.service-card-premium h3 {
+    font-size: 1.8rem;
+    color: var(--black);
+    margin: 0;
+    font-weight: 700;
+}
+
+.service-card-premium p {
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.service-card-premium ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+.service-card-premium ul li {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 1rem;
+    color: #444;
+}
+
+.service-card-premium ul li i {
+    color: var(--primary-color);
+    font-size: 1rem;
+    margin-top: 4px;
+    margin-bottom: 0;
+}
+
+.service-card-premium .cta-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.service-card-premium .learn-more {
+    color: var(--black);
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+}
+
+.service-card-premium .learn-more:hover {
+    color: var(--primary-color);
+    transform: translateX(5px);
+}
+
+.service-card-premium .btn-beratung {
+    background: var(--gold-gradient);
+    color: var(--white);
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+}
+
+/* Comparison Slider Polish */
+.comparison-slider {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    border-radius: 24px;
+    box-shadow: var(--shadow-premium);
+    cursor: ew-resize;
+    user-select: none;
+}
+
+.comparison-slider .img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.comparison-slider .before {
+    z-index: 1;
+}
+
+.comparison-slider .after {
+    z-index: 2;
+    clip-path: inset(0 0 0 50%);
+}
+
+.comparison-slider .handle {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 4px;
+    background: var(--white);
+    z-index: 3;
+    pointer-events: none;
+    transform: translateX(-50%);
+}
+
+.comparison-slider .handle::after {
+    content: '\f337';
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50px;
+    height: 50px;
+    background: var(--white);
+    color: var(--black);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    border: 3px solid var(--primary-color);
+    font-size: 1.2rem;
+}
+
+.comparison-slider .label {
+    position: absolute;
+    bottom: 30px;
+    padding: 10px 25px;
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--white);
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    z-index: 4;
+    border-radius: 50px;
+    backdrop-filter: blur(5px);
+}
+
+.comparison-slider .label.before-label {
+    left: 30px;
+}
+
+.comparison-slider .label.after-label {
+    right: 30px;
+}
+
+@media (max-width: 768px) {
+    .comparison-slider {
+        height: 350px;
+    }
+}
+
+/* Floating Shapes in Hero */
+.animated-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.shape {
+    position: absolute;
+    background: linear-gradient(45deg, rgba(212, 175, 55, 0.1), transparent);
+    border: 1px solid rgba(212, 175, 55, 0.05);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    animation: morph 20s linear infinite alternate;
+}
+
+.shape-1 {
+    width: 500px;
+    height: 500px;
+    top: -150px;
+    right: -100px;
+}
+
+.shape-2 {
+    width: 400px;
+    height: 400px;
+    bottom: -100px;
+    left: -150px;
+    animation-duration: 30s;
+    animation-delay: -5s;
+}
+
+@keyframes morph {
+    0% { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; transform: rotate(0deg) scale(1); }
+    100% { border-radius: 70% 30% 40% 60% / 60% 70% 30% 40%; transform: rotate(360deg) scale(1.1); }
+}
+
+/* Premium Form Polish */
+.contact-form {
+    background: var(--white) !important;
+    padding: 50px !important;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.1) !important;
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    border-radius: 20px !important;
+}
+
+.form-group label {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #999;
+}
+
+.form-control {
+    background: #fdfdfd !important;
+    border: 1px solid #eee !important;
+    border-radius: 12px !important;
+}
+
+.form-control:focus {
+    background: var(--white) !important;
+    border-color: var(--primary-color) !important;
+    box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1) !important;
+}

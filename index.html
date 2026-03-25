@@ -13,6 +13,7 @@
 
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/polish.css">
 
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="images/favicon.png">
@@ -49,6 +50,10 @@
     <!-- Premium Hero Section -->
     <header class="premium-hero">
         <div class="hero-overlay"></div>
+        <div class="animated-bg">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+        </div>
         <div class="hero-content">
             <h1>
                 Wir transformieren<br>
@@ -157,26 +162,26 @@
     </section>
 
     <!-- Why Luxora Section with Creative Cards -->
-    <section class="section section-dark" style="background-color: var(--black);">
+    <section class="section" style="background-color: var(--light-gray);">
         <div class="container">
-            <h2 class="section-title" style="color: var(--white);">Unser <span>Qualitätsversprechen</span></h2>
+            <h2 class="section-title">Unser Qualitätsversprechen</h2>
             <div class="service-grid">
                 <div class="creative-card">
-                    <div class="circle"><i class="fa-solid fa-gem"></i></div>
-                    <h3 style="color: var(--white);">Qualität</h3>
-                    <p style="color: var(--white); opacity: 0.8;">Wir verwenden hochwertige Materialien und moderne Techniken, um langlebige und zuverlässige
+                    <div class="circle">⭐</div>
+                    <h3>Qualität</h3>
+                    <p>Wir verwenden hochwertige Materialien und moderne Techniken, um langlebige und zuverlässige
                         Ergebnisse zu gewährleisten.</p>
                 </div>
                 <div class="creative-card">
-                    <div class="circle"><i class="fa-solid fa-shield-halved"></i></div>
-                    <h3 style="color: var(--white);">Zuverlässigkeit</h3>
-                    <p style="color: var(--white); opacity: 0.8;">Termintreue und transparente Kommunikation sind für uns selbstverständlich. Ihr Projekt ist
+                    <div class="circle">🛡️</div>
+                    <h3>Zuverlässigkeit</h3>
+                    <p>Termintreue und transparente Kommunikation sind für uns selbstverständlich. Ihr Projekt ist
                         bei uns in sicheren Händen.</p>
                 </div>
                 <div class="creative-card">
-                    <div class="circle"><i class="fa-solid fa-lightbulb"></i></div>
-                    <h3 style="color: var(--white);">Innovation</h3>
-                    <p style="color: var(--white); opacity: 0.8;">Wir setzen auf modernste Methoden und kreative Lösungen, um aus jeder Immobilie das Beste
+                    <div class="circle">💡</div>
+                    <h3>Innovation</h3>
+                    <p>Wir setzen auf modernste Methoden und kreative Lösungen, um aus jeder Immobilie das Beste
                         herauszuholen.</p>
                 </div>
             </div>
@@ -189,41 +194,53 @@
         <div class="container">
             <h2 class="section-title">Unsere Kernleistungen</h2>
             <div class="service-grid">
-                <a href="leistungen.html#renovierung" class="service-card" data-service="renovierung">
-                    <div class="service-icon"><i class="fa-solid fa-house-chimney-window"></i></div>
-                    <h3>Komplette Renovierung</h3>
-                    <p>Von der Planung bis zur schlüsselfertigen Übergabe.</p>
-                </a>
+                <!-- Service 1: Immobilienrenovierung -->
+                <div class="service-card-premium">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1664372623516-0b1540d6771e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Immobilienrenovierung">
+                    </div>
+                    <div class="service-card-content">
+                        <i class="fa-solid fa-house-chimney-window main-icon"></i>
+                        <h3>Komplette Immobilienrenovierung</h3>
+                        <p>Wir übernehmen die vollständige Sanierung Ihrer Immobilie. Von der Entkernung bis zur
+                            schlüsselfertigen Übergabe koordinieren wir alle Gewerke.</p>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Vollständiges Projektmanagement</li>
+                            <li><i class="fa-solid fa-check"></i> Hochwertige Materialien & exakte Verarbeitung</li>
+                            <li><i class="fa-solid fa-check"></i> Transparente Kostenkontrolle</li>
+                        </ul>
+                        <div class="cta-row">
+                            <a href="leistungen.html" class="learn-more">MEHR ERFAHREN <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                            <a href="kontakt.html" class="btn-beratung">KOSTENLOSE BERATUNG</a>
+                        </div>
+                    </div>
+                </div>
 
-                <a href="leistungen.html#badezimmer" class="service-card" data-service="badezimmer">
-                    <div class="service-icon"><i class="fa-solid fa-bath"></i></div>
-                    <h3>Badezimmer</h3>
-                    <p>Moderne Badgestaltung & hochwertige Umsetzung.</p>
-                </a>
-
-                <a href="leistungen.html#kueche" class="service-card" data-service="kueche">
-                    <div class="service-icon"><i class="fa-solid fa-sink"></i></div>
-                    <h3>Küchenmontage</h3>
-                    <p>Fachgerechte Montage & präziser Anschluss.</p>
-                </a>
-
-                <a href="leistungen.html#moebel" class="service-card" data-service="moebel">
-                    <div class="service-icon"><i class="fa-solid fa-couch"></i></div>
-                    <h3>Möbelmontage</h3>
-                    <p>Schnell, sauber und professionell.</p>
-                </a>
-
-                <a href="leistungen.html#sanitaer" class="service-card" data-service="sanitaer">
-                    <div class="service-icon"><i class="fa-solid fa-wrench"></i></div>
-                    <h3>Sanitärinstallation</h3>
-                    <p>Fachgerechte Wasser- und Leitungsarbeiten.</p>
-                </a>
-
-                <a href="leistungen.html#umzug" class="service-card" data-service="umzug">
-                    <div class="service-icon"><i class="fa-solid fa-truck-moving"></i></div>
-                    <h3>Umzugsservice</h3>
-                    <p>Stressfrei und professionell organisiert.</p>
-                </a>
+                <!-- Service 2: Badezimmerrenovierung -->
+                <div class="service-card-premium">
+                    <div class="service-card-image">
+                        <img src="https://images.unsplash.com/photo-1600488999585-e4364713b90a?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                            alt="Badezimmerrenovierung">
+                    </div>
+                    <div class="service-card-content">
+                        <i class="fa-solid fa-bath main-icon"></i>
+                        <h3>Badezimmerrenovierung</h3>
+                        <p>Verwandeln Sie Ihr altes Bad in eine moderne Wellness-Oase. Wir realisieren maßgeschneiderte
+                            Badkonzepte nach Ihren Vorstellungen.</p>
+                        <ul>
+                            <li><i class="fa-solid fa-check"></i> Fliesenlegen & Natursteinarbeiten</li>
+                            <li><i class="fa-solid fa-check"></i> Barrierefreie Duschlösungen</li>
+                            <li><i class="fa-solid fa-check"></i> Moderne Licht- und Raumkonzepte</li>
+                        </ul>
+                        <div class="cta-row">
+                            <a href="leistungen.html" class="learn-more">MEHR ERFAHREN <i
+                                    class="fa-solid fa-arrow-right"></i></a>
+                            <a href="kontakt.html" class="btn-beratung">KOSTENLOSE BERATUNG</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>

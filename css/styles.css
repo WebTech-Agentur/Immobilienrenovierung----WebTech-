@@ -484,154 +484,243 @@ ul {
     line-height: 1.5;
 }
 
-/* Interactive Dashboard Redesign */
-.renovierungs-dashboard {
-    perspective: 1000px;
-}
-
-.dashboard-container {
+/* Interactive Dashboard Redesign - Premium Quality */
+.premium-interactive {
     background: var(--dark-gray);
-    border-radius: 20px;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    border: 1px solid rgba(212, 175, 55, 0.15);
+}
+
+.dashboard-visual {
+    position: relative;
+    height: 280px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.dashboard-visual img.phase-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: opacity 0.8s ease, transform 1.2s ease;
+}
+
+.dashboard-visual .visual-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(30,30,30,0.95) 0%, rgba(30,30,30,0.2) 60%, rgba(30,30,30,0) 100%);
+    display: flex;
+    align-items: flex-end;
+    padding: 20px 30px;
+}
+
+.progression-ring {
+    position: relative;
+    width: 100px;
+    height: 100px;
+}
+
+.progression-ring svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+}
+
+.progression-ring circle {
+    fill: none;
+    stroke-width: 6;
+    stroke-linecap: round;
+}
+
+.progression-ring .ring-bg {
+    stroke: rgba(255, 255, 255, 0.1);
+}
+
+.progression-ring .ring-progress {
+    stroke: var(--primary-color);
+    stroke-dasharray: 289; /* 2 * PI * r where r=46 -> approx 289 */
+    stroke-dashoffset: 289;
+    transition: stroke-dashoffset 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.ring-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.ring-value {
+    display: block;
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.ring-label {
+    display: block;
+    color: var(--white);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 2px;
+}
+
+.dashboard-info-container {
     padding: 30px;
-    box-shadow: 0 40px 80px rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(212, 175, 55, 0.1);
-    transform: rotateY(-5deg);
-    transition: transform 0.5s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
 }
 
-.dashboard-container:hover {
-    transform: rotateY(0deg) scale(1.02);
-}
-
-.phasen-navigation {
+.phasen-navigation-modern {
     display: flex;
     justify-content: space-between;
-    gap: 10px;
-    margin-bottom: 30px;
     background: rgba(255, 255, 255, 0.05);
-    padding: 10px;
     border-radius: 12px;
+    padding: 8px;
 }
 
-.phasen-navigation button {
+.phasen-navigation-modern button {
     flex: 1;
     background: transparent;
     border: none;
     color: #888;
     padding: 10px 5px;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: 600;
     cursor: pointer;
     border-radius: 8px;
     transition: all 0.3s ease;
-    white-space: nowrap;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
 }
 
-.phasen-navigation button.aktiv {
+.phasen-navigation-modern button.aktiv {
     background: var(--primary-color);
     color: var(--white);
     box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
 }
 
-.dashboard-karte {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.phasen-navigation-modern button i {
+    font-size: 1.2rem;
 }
 
-.dashboard-karte h3 {
+.phase-details-modern {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.phase-details-modern .phase-subtitle {
+    font-size: 0.75rem;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.phase-details-modern h3 {
+    color: var(--white);
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+.detail-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.detail-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.detail-card:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-2px);
+}
+
+.detail-card i {
+    color: var(--primary-color);
+    font-size: 1.3rem;
+    margin-top: 3px;
+}
+
+.detail-card .label {
+    display: block;
     color: #888;
     font-size: 0.7rem;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 8px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    margin-bottom: 4px;
 }
 
-.dashboard-karte h3 i {
-    color: var(--primary-color);
-}
-
-.dashboard-karte p {
+.detail-card p {
     color: var(--white);
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-weight: 500;
+    line-height: 1.3;
 }
 
-.fortschritt-balken {
-    width: 100%;
-    height: 12px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 6px;
-    overflow: hidden;
-    margin-top: 10px;
+.highlight-status {
+    color: var(--primary-color) !important;
 }
 
-#fortschritt-wert {
-    height: 100%;
-    background: linear-gradient(90deg, var(--primary-color), #f1c40f);
-    width: 10%;
-    transition: width 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
-    box-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
-}
-
-.vorher-nachher {
+.action-row {
     margin-top: 10px;
     display: flex;
-    align-items: center;
-    gap: 20px;
-    padding: 15px;
-    background: rgba(255, 255, 255, 0.03);
-    border-radius: 12px;
-    border: 1px dashed rgba(212, 175, 55, 0.3);
 }
 
-#toggleZustand {
+.btn-dashboard-action {
     background: transparent;
-    border: 2px solid var(--primary-color);
+    border: 1px solid var(--primary-color);
     color: var(--primary-color);
-    padding: 6px 15px;
-    border-radius: 20px;
-    font-size: 0.75rem;
-    font-weight: 700;
+    padding: 12px 25px;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    flex: 1;
 }
 
-#toggleZustand:hover {
+.btn-dashboard-action:hover {
     background: var(--primary-color);
     color: var(--white);
-}
-
-#zustandAnzeige {
-    font-size: 0.85rem;
-    color: #bbb;
-    font-style: italic;
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.4);
 }
 
 @media (max-width: 768px) {
-    .dashboard-container {
-        transform: none !important;
-        padding: 20px;
+    .detail-cards {
+        grid-template-columns: 1fr;
     }
-
-    .phasen-navigation {
-        flex-wrap: wrap;
-        gap: 5px;
-    }
-
-    .phasen-navigation button {
-        flex: 1 1 45%;
-        font-size: 0.7rem;
-    }
-
-    .vorher-nachher {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
+    
+    .dashboard-visual {
+        height: 220px;
     }
 }
 

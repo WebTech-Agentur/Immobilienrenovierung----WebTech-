@@ -118,40 +118,69 @@
                     </div>
                 </div>
 
-                <div class="advantages-graphic">
-                    <div class="renovierungs-dashboard">
-                        <div class="dashboard-container">
-                            <!-- Phasen Navigation -->
-                            <div class="phasen-navigation">
-                                <button data-phase="planung" class="aktiv">Planung</button>
-                                <button data-phase="rohbau">Rohbau</button>
-                                <button data-phase="innenausbau">Innenausbau</button>
-                                <button data-phase="schluesselfertig">Schlüsselfertig</button>
-                            </div>
-
-                            <!-- Dashboard Karte -->
-                            <div class="dashboard-karte">
-                                <div class="projekt-status">
-                                    <h3><i class="fa-solid fa-clock-rotate-left"></i> Aktuelle Phase:</h3>
-                                    <p id="phasen-text">Planung</p>
-                                </div>
-
-                                <div class="material-status">
-                                    <h3><i class="fa-solid fa-layer-group"></i> Materialstatus:</h3>
-                                    <p id="material-text">Materialauswahl wird finalisiert</p>
-                                </div>
-
-                                <div class="fortschritt">
-                                    <h3><i class="fa-solid fa-bars-progress"></i> Projektfortschritt:</h3>
-                                    <div class="fortschritt-balken">
-                                        <div id="fortschritt-wert" style="width: 10%;"></div>
+                    <div class="renovierungs-dashboard premium-interactive">
+                        <div class="dashboard-visual">
+                            <img id="phase-image" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1000&auto=format&fit=crop" alt="Planung und Konzeption" class="phase-image active">
+                            <div class="visual-overlay">
+                                <div class="progression-ring">
+                                    <svg viewBox="0 0 100 100">
+                                        <circle class="ring-bg" cx="50" cy="50" r="46"></circle>
+                                        <circle class="ring-progress" cx="50" cy="50" r="46" id="ring-progress"></circle>
+                                    </svg>
+                                    <div class="ring-content">
+                                        <span class="ring-value" id="ring-text">15%</span>
+                                        <span class="ring-label">Fortschritt</span>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        
+                        <div class="dashboard-info-container">
+                            <div class="phasen-navigation-modern">
+                                <button data-phase="planung" class="aktiv">
+                                    <i class="fa-solid fa-pen-ruler"></i>
+                                    <span>Planung</span>
+                                </button>
+                                <button data-phase="rohbau">
+                                    <i class="fa-solid fa-hammer"></i>
+                                    <span>Rohbau</span>
+                                </button>
+                                <button data-phase="innenausbau">
+                                    <i class="fa-solid fa-paint-roller"></i>
+                                    <span>Ausbau</span>
+                                </button>
+                                <button data-phase="schluesselfertig">
+                                    <i class="fa-solid fa-key"></i>
+                                    <span>Finale</span>
+                                </button>
+                            </div>
 
-                                <!-- Vorher Nachher Umschalter -->
-                                <div class="vorher-nachher">
-                                    <button id="toggleZustand">VORHER</button>
-                                    <div id="zustandAnzeige">Unrenovierter Zustand</div>
+                            <div class="phase-details-modern">
+                                <span class="phase-subtitle" id="phasen-subtitle">Phase 1</span>
+                                <h3 id="phasen-text" class="glowing-text">Planung & Konzeption</h3>
+                                
+                                <div class="detail-cards">
+                                    <div class="detail-card">
+                                        <i class="fa-solid fa-layer-group"></i>
+                                        <div class="card-text">
+                                            <span class="label">Fokusbereich</span>
+                                            <p id="material-text">Materialauswahl & Grundrisse</p>
+                                        </div>
+                                    </div>
+                                    <div class="detail-card">
+                                        <i class="fa-solid fa-camera-viewfinder"></i>
+                                        <div class="card-text">
+                                            <span class="label">Projektstatus</span>
+                                            <p id="zustandAnzeige" class="highlight-status">Designentwurf</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="action-row">
+                                    <button class="btn-dashboard-action" id="toggleZustand">
+                                        <i class="fa-solid fa-arrow-right-arrow-left"></i>
+                                        <span>Vorher / Nachher</span> 
+                                    </button>
                                 </div>
                             </div>
                         </div>
@@ -309,8 +338,7 @@
 
                 <div class="footer-col">
                     <h3>Kontakt</h3>
-                    <p><i class="fa-solid fa-location-dot"></i> Bothfeld Hannover-Bothfeld-Vahrenheide 8852.411078,
-                        9.784665</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Bothfeld Hannover-Bothfeld-Vahrenheide 257b</p>
                     <p><i class="fa-solid fa-phone"></i> +49 155 6628 4478</p>
                     <p><i class="fa-solid fa-envelope"></i> <a
                             href="mailto:info@webtech-agentur.de">info@luxora-renovation.de</a></p>

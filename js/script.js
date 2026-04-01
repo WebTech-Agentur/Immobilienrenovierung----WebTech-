@@ -22,80 +22,152 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Dashboard Interaction
+    // Premium Dashboard Interaction Focus
     const phases = {
         planung: {
             text: "Planung & Konzeption",
+            subtitle: "Phase 1 - Start",
             material: "Materialauswahl & Grundrisse",
-            progress: "15%",
+            progress: 15,
             vorher: "Bestandsaufnahme",
-            nachher: "Designentwurf"
+            nachher: "Designentwurf",
+            image_nachher: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1000&auto=format&fit=crop",
+            image_vorher: "https://images.unsplash.com/photo-1498453483250-9883b27ae136?q=80&w=1000&auto=format&fit=crop"
         },
         rohbau: {
             text: "Kernsanierung & Rohbau",
+            subtitle: "Phase 2 - Struktur",
             material: "Leitungen, Putz & Rohstoffe",
-            progress: "40%",
+            progress: 40,
             vorher: "Entkernter Zustand",
-            nachher: "Rohbau-Fertigstellung"
+            nachher: "Rohbau-Fertigstellung",
+            image_nachher: "https://images.unsplash.com/photo-1541888082416-a7ae3c73452f?q=80&w=1000&auto=format&fit=crop",
+            image_vorher: "https://images.unsplash.com/photo-1621259020959-1e1b402860d5?q=80&w=1000&auto=format&fit=crop"
         },
         innenausbau: {
             text: "Innenausbau-Phase",
+            subtitle: "Phase 3 - Detailarbeit",
             material: "Böden, Fliesen & Wände",
-            progress: "75%",
+            progress: 75,
             vorher: "Rohbau-Zustand",
-            nachher: "Oberflächen-Finish"
+            nachher: "Oberflächen-Finish",
+            image_nachher: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1000&auto=format&fit=crop",
+            image_vorher: "https://images.unsplash.com/photo-1505798577917-a65157d3320a?q=80&w=1000&auto=format&fit=crop"
         },
         schluesselfertig: {
             text: "Projekt-Abschluss",
+            subtitle: "Phase 4 - Übergabe",
             material: "Feinschliff & Endreinigung",
-            progress: "100%",
+            progress: 100,
             vorher: "Baustellen-Zustand",
-            nachher: "Traumhaftes Ergebnis"
+            nachher: "Traumhaftes Ergebnis",
+            image_nachher: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1000&auto=format&fit=crop",
+            image_vorher: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1000&auto=format&fit=crop"
         }
     };
 
-    document.querySelectorAll('.phasen-navigation button').forEach(button => {
+    let isVorher = false;
+
+    const navButtons = document.querySelectorAll('.phasen-navigation-modern button, .phasen-navigation button');
+    
+    // Initialize Dashboard State Layout
+    const initialPhase = phases['planung'];
+    if(document.getElementById('ring-progress')) {
+        const initialOffset = 289 - (289 * initialPhase.progress / 100);
+        document.getElementById('ring-progress').style.strokeDashoffset = initialOffset; // Circle circumference ~289
+    }
+
+    navButtons.forEach(button => {
         button.addEventListener('click', () => {
-            // Update active button
-            document.querySelectorAll('.phasen-navigation button').forEach(b => b.classList.remove('aktiv'));
+            // Update active state
+            navButtons.forEach(b => b.classList.remove('aktiv'));
             button.classList.add('aktiv');
 
-            // Update content
-            const phase = button.getAttribute('data-phase');
-            const data = phases[phase];
+            const phaseId = button.getAttribute('data-phase');
+            const data = phases[phaseId];
 
-            document.getElementById('phasen-text').textContent = data.text;
-            document.getElementById('material-text').textContent = data.material;
-            document.getElementById('fortschritt-wert').style.width = data.progress;
+            if (!data) return;
 
-            // Reset toggle to Nachher
-            isVorher = false;
+            // DOM Updates text elements
+            const phaseText = document.getElementById('phasen-text');
+            const phaseSubtitle = document.getElementById('phasen-subtitle');
+            const materialText = document.getElementById('material-text');
+            
+            if(phaseText) phaseText.textContent = data.text;
+            if(phaseSubtitle) phaseSubtitle.textContent = data.subtitle;
+            if(materialText) materialText.textContent = data.material;
+
+            // Update Progress Formatter
+            const ringProgress = document.getElementById('ring-progress');
+            const ringText = document.getElementById('ring-text');
+            const progressBalken = document.getElementById('fortschritt-wert'); // Fallback if old code somehow visible 
+
+            if(ringProgress && ringText) {
+                const offset = 289 - (289 * data.progress / 100);
+                ringProgress.style.strokeDashoffset = offset;
+                ringText.textContent = data.progress + "%";
+            }
+            if(progressBalken) progressBalken.style.width = data.progress + "%";
+
+            // Graphic / Image Update Support
+            const phaseImage = document.getElementById('phase-image');
+            if (phaseImage) {
+                phaseImage.style.opacity = '0';
+                setTimeout(() => {
+                    phaseImage.src = isVorher ? data.image_vorher : data.image_nachher;
+                    phaseImage.alt = data.text;
+                    phaseImage.style.opacity = '1';
+                }, 400); // Wait for fade out
+            }
+
+            // Reset or synchronize Zustand display status 
             const toggleBtn = document.getElementById('toggleZustand');
-            toggleBtn.textContent = 'VORHER';
-            document.getElementById('zustandAnzeige').textContent = data.nachher;
+            const zustandText = document.getElementById('zustandAnzeige');
+            if(zustandText) zustandText.textContent = isVorher ? data.vorher : data.nachher;
         });
     });
 
-    let isVorher = false;
     const toggleBtn = document.getElementById('toggleZustand');
     if (toggleBtn) {
         toggleBtn.addEventListener('click', () => {
             isVorher = !isVorher;
-            const activePhase = document.querySelector('.phasen-navigation button.aktiv').getAttribute('data-phase');
+            const activeButton = document.querySelector('.phasen-navigation-modern button.aktiv') || document.querySelector('.phasen-navigation button.aktiv');
+            
+            if(!activeButton) return;
+            
+            const activePhase = activeButton.getAttribute('data-phase');
             const data = phases[activePhase];
 
+            const zustandAnzeige = document.getElementById('zustandAnzeige');
+            const phaseImage = document.getElementById('phase-image');
+
             if (isVorher) {
-                toggleBtn.textContent = 'NACHHER';
+                toggleBtn.querySelector('span').textContent = 'Zustand wechseln (Nachher)';
                 toggleBtn.style.color = '#fff';
                 toggleBtn.style.background = 'var(--primary-color)';
-                document.getElementById('zustandAnzeige').textContent = data.vorher;
-                document.getElementById('zustandAnzeige').style.color = 'var(--primary-color)';
+                if(zustandAnzeige) {
+                    zustandAnzeige.textContent = data.vorher;
+                    zustandAnzeige.classList.remove('highlight-status');
+                    zustandAnzeige.style.color = '#aaa'; 
+                }
             } else {
-                toggleBtn.textContent = 'VORHER';
+                toggleBtn.querySelector('span').textContent = 'Zustand wechseln (Vorher)';
                 toggleBtn.style.color = 'var(--primary-color)';
                 toggleBtn.style.background = 'transparent';
-                document.getElementById('zustandAnzeige').textContent = data.nachher;
-                document.getElementById('zustandAnzeige').style.color = '#bbb';
+                if(zustandAnzeige) {
+                    zustandAnzeige.textContent = data.nachher;
+                    zustandAnzeige.classList.add('highlight-status');
+                    zustandAnzeige.style.color = 'var(--primary-color)';
+                }
+            }
+
+            // Update Image on toggle
+            if (phaseImage) {
+                phaseImage.style.opacity = '0.5';
+                setTimeout(() => {
+                    phaseImage.src = isVorher ? data.image_vorher : data.image_nachher;
+                    phaseImage.style.opacity = '1';
+                }, 200); 
             }
         });
     }

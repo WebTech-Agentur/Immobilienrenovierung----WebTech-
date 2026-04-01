@@ -31,8 +31,8 @@ document.addEventListener('DOMContentLoaded', () => {
             progress: 15,
             vorher: "Bestandsaufnahme",
             nachher: "Designentwurf",
-            image_nachher: "https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1000&auto=format&fit=crop",
-            image_vorher: "https://images.unsplash.com/photo-1498453483250-9883b27ae136?q=80&w=1000&auto=format&fit=crop"
+            image_nachher: "images/planung_nachher.png",
+            image_vorher: "images/planung_vorher.png"
         },
         rohbau: {
             text: "Kernsanierung & Rohbau",
@@ -41,8 +41,8 @@ document.addEventListener('DOMContentLoaded', () => {
             progress: 40,
             vorher: "Entkernter Zustand",
             nachher: "Rohbau-Fertigstellung",
-            image_nachher: "https://images.unsplash.com/photo-1541888082416-a7ae3c73452f?q=80&w=1000&auto=format&fit=crop",
-            image_vorher: "https://images.unsplash.com/photo-1621259020959-1e1b402860d5?q=80&w=1000&auto=format&fit=crop"
+            image_nachher: "images/rohbau_nachher.png",
+            image_vorher: "images/rohbau_vorher.png"
         },
         innenausbau: {
             text: "Innenausbau-Phase",
@@ -51,8 +51,8 @@ document.addEventListener('DOMContentLoaded', () => {
             progress: 75,
             vorher: "Rohbau-Zustand",
             nachher: "Oberflächen-Finish",
-            image_nachher: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1000&auto=format&fit=crop",
-            image_vorher: "https://images.unsplash.com/photo-1505798577917-a65157d3320a?q=80&w=1000&auto=format&fit=crop"
+            image_nachher: "images/ausbau_nachher.png",
+            image_vorher: "images/ausbau_vorher.png"
         },
         schluesselfertig: {
             text: "Projekt-Abschluss",
@@ -61,8 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
             progress: 100,
             vorher: "Baustellen-Zustand",
             nachher: "Traumhaftes Ergebnis",
-            image_nachher: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=1000&auto=format&fit=crop",
-            image_vorher: "https://images.unsplash.com/photo-1513694203232-719a280e022f?q=80&w=1000&auto=format&fit=crop"
+            image_nachher: "images/finale_nachher.png",
+            image_vorher: "images/finale_vorher.png"
         }
     };
 
